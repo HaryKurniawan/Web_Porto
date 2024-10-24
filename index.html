@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with External Pages</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <a class="logo"><img src="./images/Frame 38.png" alt=""></a>
+        <div class="menu">
+            <button onclick="loadPage('home.html')">Home</button>
+            <button onclick="loadPage('portfolio.html')">Portfolio</button>
+            <div class="dropdown">
+                <button class="dropdown-button">
+                    Other  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <button onclick="loadPage('about.html')">About</button>
+                    <button onclick="loadPage('blog.html')">Blog</button>
+                    <button onclick="loadPage('todo.html')">To-do List</button>
+                </div>
+            </div>
+        </div>
+        <button class="btn-order" onclick="showModal()">Order now</button>
+    </nav>
+
+    <iframe id="content" src="home.html"></iframe>
+
+    <!-- Modal -->
+    <div id="priceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Price List</h2>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Product 1</td>
+                    <td>$10</td>
+                </tr>
+                <tr>
+                    <td>Product 2</td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <td>Product 3</td>
+                    <td>$20</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function loadPage(page) {
+            const iframe = document.getElementById('content');
+            iframe.src = page; // Set the source of the iframe to the selected page
+        }
+
+        function showModal() {
+            document.getElementById('priceModal').style.display = 'flex'; // Show the modal
+        }
+
+        function closeModal() {
+            document.getElementById('priceModal').style.display = 'none'; // Hide the modal
+        }
+
+        // Close modal when clicking outside of the modal content
+        window.onclick = function(event) {
+            const modal = document.getElementById('priceModal');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

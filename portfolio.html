@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Log dengan Navbar</title>
+    <link rel="stylesheet" href="./style/portofolio.css">
+</head>
+<body>
+
+    <section>
+        <div id="home-page">
+            <div class="container">
+                <div class="content-detail">
+                    <h1>My Portofolio</h1>
+                    <p>UI UX & Frontend</p>
+                </div>
+
+                <!-- Kategori Filter -->
+                <div class="category-filter">
+                    <button onclick="filterContent('semua')">Semua</button>
+                    <button onclick="filterContent('uiux')">UI UX</button>
+                    <button onclick="filterContent('frontend')">Frontend</button>
+                    <button onclick="filterContent('other')">Other</button>
+                </div>
+
+                <div class="content-list" id="content-list">
+                    <!-- Konten akan dihasilkan melalui JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div id="full-content-page" class="full-page-content">
+            <a class="back-btn" onclick="goBack()">← Kembali ke daftar</a>
+            <div id="full-content-detail"></div>
+        </div>
+    </section>
+
+    <script src="./js/portofolio.js"></script>
+</body>
+</html>

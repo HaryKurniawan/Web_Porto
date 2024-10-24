@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Log dengan Navbar</title>
+    <link rel="stylesheet" href="./style/blog.css">
+</head>
+<body>
+    <section>
+    <div id="home-page">
+        <div class="container">
+           
+            <div class="content-detail">
+                <h2>Selamat datang di Web Log</h2>
+                <p>Klik pada salah satu konten di sebelah kiri untuk melihat berita lengkap dengan foto dan penjelasannya.</p>
+            </div>
+
+             <div class="content-list">
+                <div class="content-card" onclick="showFullContent(1)">
+                    <img src="https://via.placeholder.com/800x400" alt="Berita Utama">
+                    <h3>Konten Blog 1</h3>
+                </div>
+                <div class="content-card" onclick="showFullContent(2)">
+                    <img src="https://via.placeholder.com/800x400" alt="Berita Ekonomi">
+                    <h3>Konten Blog 2</h3>
+                </div>
+                <div class="content-card" onclick="showFullContent(3)">
+                    <img src="https://via.placeholder.com/800x400" alt="Berita Olahraga">
+                    <h3>Konten Blog 3</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="full-content-page" class="full-page-content">
+        <a class="back-btn" onclick="goBack()">← Kembali ke daftar</a>
+        <div id="full-content-detail">
+        </div>
+    </div>
+
+</section>
+    <script src="./js/blog.js"></script>
+</body>
+</html>
